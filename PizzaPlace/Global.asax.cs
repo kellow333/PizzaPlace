@@ -6,6 +6,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using PizzaPlace;
+using System.Data.Entity;
+using PizzaPlace.Models;
 
 namespace PizzaPlace
 {
@@ -17,6 +19,9 @@ namespace PizzaPlace
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterOpenAuth();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // Initailize the product database
+            Database.SetInitializer(new ProductDatabaseInitializer());
         }
 
         void Application_End(object sender, EventArgs e)

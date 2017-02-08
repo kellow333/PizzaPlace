@@ -4,7 +4,7 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Pizza Place</title>
     <asp:PlaceHolder runat="server">     
           <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>  
@@ -40,7 +40,7 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                    <a runat="server" href="~/">your logo here</a>
+                                        <a id="A2" class="navbar-brand" runat="server" href="~/">Pizza Place</a>
                 </p>
             </div>
             <div class="float-right">
@@ -72,10 +72,17 @@
         </div>
     </header>
     <div id="body">
+        <div id="TitleContent" style="text-align: center">
+            <a id="A1" runat="server" href="~/">
+                <asp:Image  ID="Image1" runat="server" ImageUrl="~/Images/logo.jpg" BorderStyle="None" />
+            </a>  
+            <br />  
+        </div>
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">
             <asp:ContentPlaceHolder runat="server" ID="MainContent" />
         </section>
+
     </div>
     <footer>
         <div class="content-wrapper">
